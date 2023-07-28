@@ -1,6 +1,6 @@
 const yearStart = 2020;
 const yearEnd = 2023;
-const totalNoOfCountriesToLoad = 400;
+const totalNoOfCountriesToLoad = 50;
 
 const margin = {top: 20, right: 120, bottom: 50, left: 50},
     svgWidth = 900,

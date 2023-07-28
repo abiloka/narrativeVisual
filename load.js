@@ -12,6 +12,9 @@ var parseTime = d3.timeParse("%Y");
 var formatValue = d3.format(",");
 var floatFormatValue = d3.format(".3n");
 
+var fileName = 'sums.csv';
+
+
 // WDI call type 
 const type = {
     TOTAL: 0,

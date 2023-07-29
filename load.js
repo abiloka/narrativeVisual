@@ -36,8 +36,8 @@ var y = d3.scaleLinear().range([height, 0]);
 
 // define the line
 var valueline = d3.line()
-    .x(function(d) { return x(d.Year); })
-    .y(function(d) { return y(d.Amount); });
+    .x(function(d) { return x(d.year); })
+    .y(function(d) { return y(d.cases_yr); });
 
 // append the svg obgect to the body of the page
 // appends a 'group' element to 'svg'

@@ -12,7 +12,7 @@ var parseTime = d3.timeParse("%Y");
 var formatValue = d3.format(",");
 var floatFormatValue = d3.format(".3n");
 
-var fileName = 'sums.csv';
+var fileName = 'https://github.com/abiloka/narrativeVisual/blob/d544a496a3c22c7b5548f15881705e3d24118c7c/sums.csv';
 
 
 // WDI call type 

@@ -1,5 +1,5 @@
 var dateParse = d3.timeParse("%Y-%m-%m");
-var fileName = 'https://gist.githubusercontent.com/radhika-sivarajan/d78e4444edf3816fb0c3d939da9bc3ed/raw/6ecaa93312d3c629d89f416343867fbb7f7108e4/datasrc.csv';
+var fileName = 'https://github.com/abiloka/narrativeVisual/blob/9d261c36f69708e17274a4b162a49fe5e08aff79/datasrc.csv';
 
 var margin = { top: 30, right: 50, bottom: 30, left: 50 };
 var svgWidth = 700 - margin.left - margin.right;

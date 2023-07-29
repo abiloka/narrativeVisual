@@ -56,8 +56,8 @@ var parseTime = d3.timeParse("%Y");
 
 // format the data
 data.forEach(function(d) {
-  d.Year = parseTime(d.Year);
-  d.Amount = +d.Amount;
+  d.Year = parseTime(d.year);
+  d.Amount = +d.cases_yr;
 });
 
 // Scale the range of the data

@@ -71,30 +71,10 @@ $("#to_step2").click(function() {
     draw("USA", false, 2);
 })
 
-$("#to_step3").click(function() {
-    //d3.selectAll("path").remove();
-    innerChart.selectAll("g").remove();
-    hide('#step2');
-    show('#step3');
-    draw("CHN", false, 0);
-    draw("CHN", false, 1);
-    draw("CHN", false, 2);
-})
-
-$("#to_step4").click(function() {
-    //d3.selectAll("path").remove();
-    innerChart.selectAll("g").remove();
-    hide('#step3');
-    show('#step4');
-    draw("RUS", false, 0);
-    draw("RUS", false, 1);
-    draw("RUS", false, 2);
-})
-
 $("#to_step5").click(function() {
     //d3.selectAll("path").remove();
     innerChart.selectAll("g").remove();
-    hide('#step4');
+    hide('#step2');
     loadCountries(addCountriesList);
     show('#step5');
     draw("WLD", true, 0);

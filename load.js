@@ -1,4 +1,5 @@
 
+
 const yearStart = 2000;
 const yearEnd = 2020;
 const totalNoOfCountriesToLoad = 400;
@@ -12,6 +13,23 @@ const margin = {top: 20, right: 120, bottom: 50, left: 50},
 var parseTime = d3.timeParse("%Y");
 var formatValue = d3.format(",");
 var floatFormatValue = d3.format(".3n");
+
+
+
+
+
+
+
+
+
+
+var fileName = 'https://github.com/abiloka/narrativeVisual/blob/d544a496a3c22c7b5548f15881705e3d24118c7c/sums.csv';
+
+
+
+
+
+
 
 
 
@@ -42,8 +60,8 @@ var yAxis = d3.axisLeft().scale(yScale);
 
 // line chart related
 var valueline = d3.line()
-    .x(function(d){ return xScale(d.Year);})
-    .y(function(d){ return yScale(d.Amount);})
+    .x(function(d){ return xScale(d.date);})
+    .y(function(d){ return yScale(d.value);})
     .curve(d3.curveLinear);
 
 

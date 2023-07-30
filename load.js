@@ -1,7 +1,14 @@
 
 
 
-var dataAsCsv = 'https://github.com/abiloka/narrativeVisual/blob/d544a496a3c22c7b5548f15881705e3d24118c7c/sums.csv';
+var dataAsCsv = `Year,Amount
+1998,103323
+1999,57914.9
+2003,297.969
+2004,921253.8
+2007,169869.2
+2008,44685.5
+2010,86084.5`;
 
 
 // set the dimensions and margins of the graph
@@ -16,8 +23,8 @@ var y = d3.scaleLinear().range([height, 0]);
 
 // define the line
 var valueline = d3.line()
-    .x(function(d) { return x(d.year); })
-    .y(function(d) { return y(d.cases_yr); });
+    .x(function(d) { return x(d.Year); })
+    .y(function(d) { return y(d.Amount); });
 
 // append the svg obgect to the body of the page
 // appends a 'group' element to 'svg'
@@ -36,8 +43,8 @@ var parseTime = d3.timeParse("%Y");
 
 // format the data
 data.forEach(function(d) {
-  d.Year = parseTime(d.year);
-  d.Amount = +d.cases_yr;
+  d.Year = parseTime(d.Year);
+  d.Amount = +d.Amount;
 });
 
 // Scale the range of the data
@@ -75,8 +82,7 @@ svg.append("text")
   .attr("x",0 - (height / 2))
   .attr("dy", "1em")
   .style("text-anchor", "middle")
-  .text("Number");  
-
+  .text("Amount");  
 
 
 

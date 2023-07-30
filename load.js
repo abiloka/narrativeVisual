@@ -15,8 +15,8 @@ var floatFormatValue = d3.format(".3n");
 // WDI call type 
 const type = {
     TOTAL: 0,
-    MAILE: 1,
-    FEMAILE: 2
+    MALE: 1,
+    FEMALE: 2
 }
 
 const colors = ["blue","red","yellow","green","black","blue","gray", "lightgray", "orange"];

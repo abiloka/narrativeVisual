@@ -78,8 +78,6 @@ $("#to_step5").click(function() {
     draw("WLD", true, 0);
     draw("USA", true, 0);
     draw("CHN", true, 0);
-    draw("RUS", true, 0);
-    
 })
 
 $("#startover").click(function() {

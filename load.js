@@ -15,23 +15,6 @@ var floatFormatValue = d3.format(".3n");
 
 
 
-
-
-
-
-
-
-
-var fileName = 'https://github.com/abiloka/narrativeVisual/blob/d544a496a3c22c7b5548f15881705e3d24118c7c/sums.csv';
-
-
-
-
-
-
-
-
-
 var dataAsCsv = `Year,Amount
 1998,103323
 1999,57914.9
@@ -123,22 +106,6 @@ svg.append("text")
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // WDI call type 
 const type = {
     TOTAL: 0,
@@ -165,8 +132,8 @@ var yAxis = d3.axisLeft().scale(yScale);
 
 // line chart related
 var valueline = d3.line()
-    .x(function(d){ return xScale(d.date);})
-    .y(function(d){ return yScale(d.value);})
+    .x(function(d){ return xScale(d.Year);})
+    .y(function(d){ return yScale(d.Amount);})
     .curve(d3.curveLinear);
 
 

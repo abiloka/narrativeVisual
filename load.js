@@ -9,7 +9,7 @@ const margin = {top: 20, right: 120, bottom: 50, left: 50},
     height = svgHeight - margin.top - margin.bottom;
 
 var parseTime = d3.timeParse("%Y");
-var formatValue = d3.format(".2");
+var formatValue = d3.format(",");
 var floatFormatValue = d3.format(".3n");
 
 // WDI call type 
@@ -29,7 +29,7 @@ const innerChart = chart.append("g")
                 .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 // x,y values
-var xScale = d3.scaleLinear().range([0,width]).format("04d");
+var xScale = d3.scaleLinear().range([0,width]);
 var yScale = d3.scaleLinear().range([height, 0]);    
 
 

@@ -76,7 +76,6 @@ $("#to_step5").click(function() {
     loadCountries(addCountriesList);
     show('#step5');
     draw("WLD", true, 0);
-    draw("USA", true, 0);
 })
 
 $("#startover").click(function() {

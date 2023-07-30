@@ -1,17 +1,6 @@
 
 
 
-
-var dataAsCsv = `Year,Amount
-1998,103323
-1999,57914.9
-2003,297.969
-2004,921253.8
-2007,169869.2
-2008,44685.5
-2010,86084.5`;
-
-
 var dataAsCsv = 'https://github.com/abiloka/narrativeVisual/blob/d544a496a3c22c7b5548f15881705e3d24118c7c/sums.csv';
 
 

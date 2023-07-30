@@ -19,7 +19,7 @@ const type = {
     Unempl: 2
 }
 
-const colors = ["blue","red","yellow","green","black","blue","gray", "lightgray", "orange"];
+const colors = ["blue","red","yellow","green","black","gray", "lightgray", "orange"];
 
 const chart = d3.select('#chart')
     .attr("width", svgWidth)

@@ -14,9 +14,9 @@ var floatFormatValue = d3.format(".3n");
 
 // WDI call type 
 const type = {
-    LaborRatio: 0,
-    FemaleMaleRatio: 1,
-    UnemplRate: 2
+    Total: 0,
+    Gender: 1,
+    Unempl: 2
 }
 
 const colors = ["blue","red","yellow","green","black","blue","gray", "lightgray", "orange"];
@@ -118,16 +118,16 @@ function loadFemaleEmploymentByCountryCode(countryCode, callback){
     d3.json("https://api.worldbank.org/v2/country/" + countryCode + "/indicator/SL.TLF.CACT.FE.ZS?format=json&per_page=60&date=" + yearStart + ":" + yearEnd)
         .then(callback);
 }
-function loadMaleEmploymentByCountryCode(countryCode, callback){
+function loadUnempEmploymentByCountryCode(countryCode, callback){
     d3.json("https://api.worldbank.org/v2/country/" + countryCode + "/indicator/SL.UEM.TOTL.ZS?format=json&per_page=60&date=" + yearStart + ":" + yearEnd)
         .then(callback);
 }
 
 function loadEmploymentByCountryCode(countryCode, type, callback){
-    if (type == "male"){
-        loadMaleEmploymentByCountryCode(countryCode, callback);
+    if (type == "unemp"){
+        loadUnempEmploymentByCountryCode(countryCode, callback);
     }
-    else if (type == "female"){
+    else if (type == "gender"){
         loadFemaleEmploymentByCountryCode(countryCode, callback);
     }
     else if (type == "total"){
@@ -151,10 +151,10 @@ function draw(countryCode, countrylabel, type) {
         loadEmploymentByCountryCode(countryCode, "total", drawChart(countryCode, countrylabel, "orange"));
     }
     else if (type == 1){
-        loadEmploymentByCountryCode(countryCode, "male", drawChart(countryCode, countrylabel, "blue"));
+        loadEmploymentByCountryCode(countryCode, "gender", drawChart(countryCode, countrylabel, "green"));
     }
     else if (type == 2){
-        loadEmploymentByCountryCode(countryCode, "female", drawChart(countryCode, countrylabel, "red"));
+        loadEmploymentByCountryCode(countryCode, "unepm", drawChart(countryCode, countrylabel, "red"));
     }
     else {
         console.log("error in draw(), type:", type);

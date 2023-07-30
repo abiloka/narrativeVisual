@@ -77,7 +77,6 @@ $("#to_step5").click(function() {
     show('#step5');
     draw("WLD", true, 0);
     draw("USA", true, 0);
-    draw("CHN", true, 0);
 })
 
 $("#startover").click(function() {
@@ -102,7 +101,6 @@ function load(){
     });
 }
 
-// get all countries ( total 304 countries so far so setting it to 400 items per page to get all the countries information. #TODO fix it so get page meta first to get "total" and send 2nd query to dynamically change the per_pages number to have "total" values)
 // provide a callback function to execute with loaded data.
 function loadCountries(callback){
     if (typeof callback !== "function") throw new Error("Wrong callback in loadCountries");
@@ -117,20 +115,14 @@ function loadTotalEmploymentByCountryCode(countryCode, callback){
         .then(callback);
 }
 function loadFemaleEmploymentByCountryCode(countryCode, callback){
-    d3.json("https://api.worldbank.org/v2/country/" + countryCode + "/indicator/SL.TLF.CACT.ZS?format=json&per_page=60&date=" + yearStart + ":" + yearEnd)
+    d3.json("https://api.worldbank.org/v2/country/" + countryCode + "/indicator/SL.TLF.CACT.FE?format=json&per_page=60&date=" + yearStart + ":" + yearEnd)
         .then(callback);
 }
 function loadMaleEmploymentByCountryCode(countryCode, callback){
-    d3.json("https://api.worldbank.org/v2/country/" + countryCode + "/indicator/SL.TLF.CACT.ZSformat=json&per_page=60&date=" + yearStart + ":" + yearEnd)
+    d3.json("https://api.worldbank.org/v2/country/" + countryCode + "/indicator/SL.TLF.CACT.MA?format=json&per_page=60&date=" + yearStart + ":" + yearEnd)
         .then(callback);
 }
 
-/**
- * 
- * @param {*} countryCode 3-digit country code
- * @param {*} type "male", "female", "total" (male+female)
- * @param {*} callback callback function 
- */
 function loadEmploymentByCountryCode(countryCode, type, callback){
     if (type == "male"){
         loadMaleEmploymentByCountryCode(countryCode, callback);
@@ -146,17 +138,12 @@ function loadEmploymentByCountryCode(countryCode, type, callback){
     }
 }
 
-// Only for debugging purpose, provide this function as callback for those API calls to see the loaded data
+
 function debug(d){
     console.log("DEBUG) data loaded:", d);
 }
 
-/**
- * callback function
- * @param {*} countryCode 3-digit country code to query, "WLD" is for the world.
- * @param {*} countrylabel true of false for drawing line tooltip 
- * @param {*} type type constant, 0: total, 1: male, 2: female
- */
+
 function draw(countryCode, countrylabel, type) {
     console.log("country in draw():", countryCode);
 

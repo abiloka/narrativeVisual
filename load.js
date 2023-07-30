@@ -154,7 +154,7 @@ function draw(countryCode, countrylabel, type) {
         loadEmploymentByCountryCode(countryCode, "gender", drawChart(countryCode, countrylabel, "green"));
     }
     else if (type == 2){
-        loadEmploymentByCountryCode(countryCode, "unemp", drawChart(countryCode, countrylabel, "blue"));
+        loadEmploymentByCountryCode(countryCode, "unemp", drawChart(countryCode, countrylabel, "red"));
     }
     else {
         console.log("error in draw(), type:", type);

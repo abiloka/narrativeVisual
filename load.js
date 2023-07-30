@@ -35,7 +35,7 @@ var yScale = d3.scaleLinear().range([height, 0]);
 
 
 // x,y axis
-var xAxis = d3.axisBottom().scale(xScale);
+var xAxis = d3.axisBottom().scale(xScale).tickFormat(d3.format("d"));
 var yAxis = d3.axisLeft().scale(yScale);
 
 // line chart related

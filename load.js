@@ -16,7 +16,7 @@ var floatFormatValue = d3.format(".3n");
 const type = {
     Total: 0,
     Gender: 1,
-    Unempl: 2
+    Unemp: 2
 }
 
 const colors = ["blue","red","yellow","green","black","gray", "lightgray", "orange"];

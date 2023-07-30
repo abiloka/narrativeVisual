@@ -115,11 +115,11 @@ function loadTotalEmploymentByCountryCode(countryCode, callback){
         .then(callback);
 }
 function loadFemaleEmploymentByCountryCode(countryCode, callback){
-    d3.json("https://api.worldbank.org/v2/country/" + countryCode + "/indicator/SL.TLF.CACT.FE?format=json&per_page=60&date=" + yearStart + ":" + yearEnd)
+    d3.json("https://api.worldbank.org/v2/country/" + countryCode + "/indicator/SL.TLF.CACT.FE.ZS?format=json&per_page=60&date=" + yearStart + ":" + yearEnd)
         .then(callback);
 }
 function loadMaleEmploymentByCountryCode(countryCode, callback){
-    d3.json("https://api.worldbank.org/v2/country/" + countryCode + "/indicator/SL.TLF.CACT.MA?format=json&per_page=60&date=" + yearStart + ":" + yearEnd)
+    d3.json("https://api.worldbank.org/v2/country/" + countryCode + "/indicator/SL.UEM.TOTL.ZS?format=json&per_page=60&date=" + yearStart + ":" + yearEnd)
         .then(callback);
 }
 

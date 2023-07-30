@@ -8,7 +8,7 @@ const margin = {top: 20, right: 120, bottom: 50, left: 50},
     width = svgWidth - margin.left - margin.right,
     height = svgHeight - margin.top - margin.bottom;
 
-
+var parseTime = d3.timeParse("%Y");
 var formatValue = d3.format("");
 var floatFormatValue = d3.format(".3n");
 
@@ -32,7 +32,7 @@ const innerChart = chart.append("g")
 var xScale = d3.scaleLinear().range([0,width]);
 var yScale = d3.scaleLinear().range([height, 0]);    
 
-var parseTime = d3.timeParse("%Y");
+
 
 // x,y axis
 var xAxis = d3.axisBottom().scale(xScale);

@@ -9,7 +9,7 @@ const margin = {top: 20, right: 120, bottom: 50, left: 50},
     height = svgHeight - margin.top - margin.bottom;
 
 var parseTime = d3.timeParse("%Y");
-var formatValue = d3.format(",");
+var formatValue = d3.format(".2");
 var floatFormatValue = d3.format(".3n");
 
 // WDI call type 
@@ -35,7 +35,7 @@ var yScale = d3.scaleLinear().range([height, 0]);
 
 
 // x,y axis
-var xAxis = d3.axisBottom().scale(xScale);
+var xAxis = d3.axisBottom().scale(xScale).tickFormat(d3.format("d"));
 var yAxis = d3.axisLeft().scale(yScale);
 
 // line chart related

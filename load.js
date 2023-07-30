@@ -29,13 +29,13 @@ const innerChart = chart.append("g")
                 .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 // x,y values
-var xScale = d3.scaleLinear().range([0,width]).format("04d");
+var xScale = d3.scaleLinear().range([0,width]);
 var yScale = d3.scaleLinear().range([height, 0]);    
 
 
 
 // x,y axis
-var xAxis = d3.axisBottom().scale(xScale).tickFormat(d3.format("d"));
+var xAxis = d3.axisBottom().scale(xScale);
 var yAxis = d3.axisLeft().scale(yScale);
 
 // line chart related

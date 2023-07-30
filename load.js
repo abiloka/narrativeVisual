@@ -115,11 +115,11 @@ function loadCountries(callback){
 // get a given country's data
 // provide a callback function to execute with loaded data. World total.
 function loadTotalEmploymentByCountryCode(countryCode, callback){
-    d3.json("https://api.worldbank.org/v2/country/" + countryCode + "/indicator/SL.EMP.WORK.ZS?format=json&per_page=60&date=" + yearStart + ":" + yearEnd)
+    d3.json("https://api.worldbank.org/v2/country/" + countryCode + "/indicator/SL.TLF.CACT.ZS?format=json&per_page=60&date=" + yearStart + ":" + yearEnd)
         .then(callback);
 }
 function loadFemaleEmploymentByCountryCode(countryCode, callback){
-    d3.json("https://api.worldbank.org/v2/country/" + countryCode + "/indicator/SL.EMP.WORK.FE.ZS?format=json&per_page=60&date=" + yearStart + ":" + yearEnd)
+    d3.json("https://api.worldbank.org/v2/country/" + countryCode + "/indicator/SL.TLF.CACT.ZS?format=json&per_page=60&date=" + yearStart + ":" + yearEnd)
         .then(callback);
 }
 function loadMaleEmploymentByCountryCode(countryCode, callback){

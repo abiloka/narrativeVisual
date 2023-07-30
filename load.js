@@ -216,7 +216,7 @@ function drawChart(countryCode, countrylabel, color){
                 "translate(" + (width/2) + " ," + 
                                 (height + margin.top + 20) + ")")
             .style("text-anchor", "middle")
-            .text("year");
+            .text("Year");
 
         console.log("add y axis");
         // Add the Y Axis
@@ -232,7 +232,7 @@ function drawChart(countryCode, countrylabel, color){
             .attr("x", 0 - (height / 2))
             .attr("dy", "1em")
             .style("text-anchor", "middle")
-            .text("percentage");
+            .text("Percent");
 
 
         console.log("draw data");

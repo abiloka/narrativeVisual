@@ -1,91 +1,55 @@
+const yearStart = 2000;
+const yearEnd = 2017;
+const totalNoOfCountriesToLoad = 400;
 
-
-
-var dataAsCsv = `Year,Amount
-1998,103323
-1999,57914.9
-2003,297.969
-2004,921253.8
-2007,169869.2
-2008,44685.5
-2010,86084.5`;
-
-
-// set the dimensions and margins of the graph
-var margin = {top: 50, right: 50, bottom: 100, left: 80},
-    width = 960 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
-    
-
-// set the ranges
-var x = d3.scaleTime().range([0, width]);
-var y = d3.scaleLinear().range([height, 0]);
-
-// define the line
-var valueline = d3.line()
-    .x(function(d) { return x(d.Year); })
-    .y(function(d) { return y(d.Amount); });
-
-// append the svg obgect to the body of the page
-// appends a 'group' element to 'svg'
-// moves the 'group' element to the top left margin
-var svg = d3.select("body").append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-  .append("g")
-    .attr("transform",
-          "translate(" + margin.left + "," + margin.top + ")");
-
-var data = d3.csvParse(dataAsCsv);
-
+const margin = {top: 20, right: 120, bottom: 50, left: 50},
+    svgWidth = 900,
+    svgHeight = 600,
+    width = svgWidth - margin.left - margin.right,
+    height = svgHeight - margin.top - margin.bottom;
 
 var parseTime = d3.timeParse("%Y");
+var formatValue = d3.format(",");
+var floatFormatValue = d3.format(".3n");
 
-// format the data
-data.forEach(function(d) {
-  d.Year = parseTime(d.Year);
-  d.Amount = +d.Amount;
-});
+// WDI call type 
+const type = {
+    TOTAL: 0,
+    MAILE: 1,
+    FEMAILE: 2
+}
 
-// Scale the range of the data
-x.domain(d3.extent(data, function(d) { return d.Year}));
-y.domain([0, d3.max(data, function(d) { return d.Amount; })]);
+const colors = ["blue","red","yellow","green","black","blue","gray", "lightgray", "orange"];
 
+const chart = d3.select('#chart')
+    .attr("width", svgWidth)
+    .attr("height", svgHeight)
 
-// Add the valueline path.
-svg.append("path")
-  .data([data])
-  .attr("class", "line")
-  .attr("d", valueline);
+const innerChart = chart.append("g")
+                .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-// Add the X Axis
-svg.append("g")
-  .attr("transform", "translate(0," + height + ")")
-  .call(d3.axisBottom(x));
+// x,y values
+var xScale = d3.scaleLinear().range([0,width]);
+var yScale = d3.scaleLinear().range([height, 0]);    
 
-// text label for the x axis
-svg.append("text")             
-  .attr("transform",
-        "translate(" + (width/2) + " ," + 
-        (height + margin.top) + ")")
-  .style("text-anchor", "middle")
-  .text("Year");
+// x,y axis
+var xAxis = d3.axisBottom().scale(xScale);
+var yAxis = d3.axisLeft().scale(yScale);
 
-// Add the Y Axis
-svg.append("g")
-  .call(d3.axisLeft(y));
-
-// text label for the y axis
-svg.append("text")
-  .attr("transform", "rotate(-90)")
-  .attr("y", 0 - margin.left)
-  .attr("x",0 - (height / 2))
-  .attr("dy", "1em")
-  .style("text-anchor", "middle")
-  .text("Amount");  
+// line chart related
+var valueline = d3.line()
+    .x(function(d){ return xScale(d.date);})
+    .y(function(d){ return yScale(d.value);})
+    .curve(d3.curveLinear);
 
 
-
+// Adds the svg canvas
+var g = innerChart
+    // .call(zoom)
+    .attr("width", svgWidth)
+    .attr("height", svgHeight)
+    .append("g")
+    .attr("transform", `translate(${margin.left},${margin.top})`);  
 
 
 

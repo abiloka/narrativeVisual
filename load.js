@@ -1,5 +1,5 @@
-const yearStart = 2000;
-const yearEnd = 2017;
+const yearStart = 2010;
+const yearEnd = 2022;
 const totalNoOfCountriesToLoad = 400;
 
 const margin = {top: 20, right: 120, bottom: 50, left: 50},

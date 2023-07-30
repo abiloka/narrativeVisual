@@ -1,4 +1,4 @@
-const yearStart = 2000;
+const yearStart = 1990;
 const yearEnd = 2020;
 const totalNoOfCountriesToLoad = 400;
 
